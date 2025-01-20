@@ -1,0 +1,30 @@
+.color-swatches {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  .color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+  }
+  
+
+/* Dashboard Content */
+.dashboard-container {
+  margin-top: 70px; /* Adjust based on the navbar height */
+  padding: 20px;
+}
+
+/* Table Styling */
+.table-container {
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
