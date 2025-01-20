@@ -1,0 +1,91 @@
+/* Center the register container */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background for the page */
+  }
+  
+  /* Register container */
+  .register-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px; /* Limit the container width */
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better appearance */
+  }
+  
+  /* Image section */
+  .register-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #f8f9fa; /* Light gray background for the image section */
+  }
+  
+  .register-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* No rounded corners */
+  }
+  
+  /* Form section */
+  .register-frame {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f8f9fa; /* Light gray background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Form input fields */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group-text {
+    height: 38px; /* Same as the default height of the input field */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px; /* Adjust padding as needed */
+  }
+  
+  .form-control {
+    height: 38px; /* Ensure the input field height matches the icon height */
+  }
+  
+  /* Error message styling */
+  .text-danger {
+    font-size: 0.875rem; /* Smaller font size for error messages */
+    color: red; /* Red color for error messages */
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #007bff !important; /* Blue color for the button */
+    border-color: #007bff !important; /* Blue border color for the button */
+    color: #fff; /* White text color for the button */
+    width: 100%; /* Make the button full width */
+    padding: 0.75rem; /* Increase padding for better appearance */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3 !important; /* Darker blue color on hover */
+    border-color: #0056b3 !important; /* Darker blue border color on hover */
+  }
+  
+  /* Login link styling */
+  .login-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
