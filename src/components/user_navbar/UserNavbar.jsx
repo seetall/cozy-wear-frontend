@@ -1,9 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+
+
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import "./UserNavbar.css";
 import { FaSearch, FaShoppingCart, FaHeart, FaUser } from "react-icons/fa";
 
 const UserNavbar = () => {
+  const [showDialog, setShowDialog] = useState(false); // State to control the dialog visibility
+  const navigate = useNavigate(); // Hook for navigation
+
+  // Function to handle logout
+  const handleLogout = () => {
+    // Clear user data from localStorage (or handle your logout logic)
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    // Redirect to login page
+    navigate("/");
+  };
+
   return (
     <nav className="user-navbar">
       <div className="navbar-logo">
@@ -12,9 +27,6 @@ const UserNavbar = () => {
       <ul className="navbar-links">
         <li>
           <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/shop">Shop</Link>
         </li>
         <li>
           <Link to="/quiz">Quiz</Link>
@@ -34,12 +46,34 @@ const UserNavbar = () => {
         <div className="dropdown">
           <FaUser className="navbar-icon" />
           <div className="dropdown-menu">
-            <Link to="/profile">Profile</Link>
-            <Link to="/orders">Orders</Link>
-            <Link to="/logout">Logout</Link>
+            <Link to="/profile">Personal Information</Link>
+            <Link to="/orders">My Orders</Link>
+            <Link to="/address">Manage Address</Link>
+            <Link
+              to="#"
+              onClick={(e) => {
+                e.preventDefault(); // Prevent default link behavior
+                setShowDialog(true); // Show the dialog box
+              }}
+            >
+              Logout
+            </Link>
           </div>
         </div>
       </div>
+
+      {/* Dialog Box */}
+      {showDialog && (
+        <div className="logout-dialog">
+          <div className="dialog-content">
+            <p>Do you want to log out?</p>
+            <button onClick={handleLogout}>Yes</button>
+            <button className="cancel" onClick={() => setShowDialog(false)}>
+              No
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
