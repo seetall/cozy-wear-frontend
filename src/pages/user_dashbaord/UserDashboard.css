@@ -15,9 +15,55 @@ html, body {
   background-color: white; /* Background for visibility */
   padding: 1rem; /* Optional padding for spacing */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for a clean look */
+  display: flex; /* Ensure it's flexible and contents are aligned */
+  justify-content: space-between; /* Optionally, space out navbar items */
+  position: sticky;
+  top: 0;
 }
 
 /* Prevent overlap with other elements */
 body {
   padding-top: 70px; /* Adjust this value to match the navbar height */
 }
+
+/* Optional: Add some background or borders to make sure the navbar is visible */
+.navbar-nav {
+  background-color: white;
+  color: black;
+}
+
+/* Add margin to body below navbar */
+body {
+  margin-top: 50px; /* Adjust this to fit your navbar height */
+}
+
+/* Optional: Fix issues of hidden navbar */
+.container {
+  position: relative;
+  z-index: 0;
+}
+
+/* Carousel */
+.carousel {
+  width: 100%; /* Full width */
+  overflow: hidden; /* Prevent horizontal scrolling */
+  height: 100vh; /* Full viewport height */
+  margin-top: 0; /* Ensure no space between navbar and carousel */
+  padding: 0; /* Remove any padding */
+}
+
+/* Carousel inner container */
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure the image covers the entire screen */
+.carousel-inner img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  background-color: #f0f0f0; /* Placeholder color */
+}
+
