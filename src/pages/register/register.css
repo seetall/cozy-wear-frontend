@@ -88,4 +88,21 @@ body, html {
     cursor: pointer;
     text-decoration: underline;
   }
+
+  /* Button styling for the Register button */
+.btn-custom {
+  background-color: #003366; /* Navy blue color */
+  border-color: #003366; /* Navy blue border */
+  color: white; /* White text */
+  width: 100%; /* Make the button full width */
+  padding: 0.75rem; /* Increase padding for better appearance */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Bold font weight */
+}
+
+.btn-custom:hover {
+  background-color: #002244; /* Darker navy blue color on hover */
+  border-color: #002244; /* Darker navy blue border on hover */
+}
+
   
