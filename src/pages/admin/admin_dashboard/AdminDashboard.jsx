@@ -264,21 +264,15 @@ const AdminDashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {products.map((singleProduct) => (
-                  <tr key={singleProduct._id}>
-                    <td>
-                      <img
-                        src={`http://localhost:5000/products/${singleProduct.productImage}`}
-                        alt={singleProduct.productName}
-                        className="img-fluid"
-                        style={{ maxHeight: '50px', objectFit: 'cover' }}
-                      />
-                    </td>
-                    <td>{singleProduct.productName}</td>
-                    <td>{singleProduct.productCategory}</td>
-                    <td>${singleProduct.productPrice}</td>
-                    <td>{singleProduct.size}</td>
-                    <td>
+              {
+              products.map((singleProduct) => (
+                <tr>
+                  <td><img width={'40px'} height={'40px'} src={`http://localhost:5000/products/${singleProduct.productImage}`} alt="" /></td>
+                  <td>{singleProduct.productName}</td>
+                  <td>{singleProduct.productPrice}</td>
+                  <td>{singleProduct.productCategory}</td>
+                  <td>{singleProduct.productDescription}</td>
+                  <td>
                       <div className="color-swatches">
                         {singleProduct.color.map((color, index) => (
                           <span
