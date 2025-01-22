@@ -37,3 +37,21 @@ export const deleteProduct = (id) => Api.delete(`/api/product/delete_product/${i
 
 // Update product
 export const updateProduct = (id, data) => Api.put(`/api/product/update_product/${id}`, data, config);
+
+// export const updateInfo = (id,data) =>Api.put('/api/user/profile', data, config)
+
+
+export const updateInfo = async (data, token) => {
+    try {
+      const res = await Api.put('/api/user/profile', data, {
+        headers: {
+          Authorization: `Bearer ${token}`, // Sending the JWT token
+        }
+      });
+      return res;
+    } catch (error) {
+      console.error("API error:", error);
+      throw error;
+    }
+  };
+  
