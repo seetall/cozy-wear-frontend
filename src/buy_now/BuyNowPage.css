@@ -1,0 +1,60 @@
+/* Container for the Buy Now Page */
+.buy-now {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Header styling */
+  .buy-now h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Product image styling */
+  .product-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Product information styling */
+  .product-info {
+    margin-bottom: 20px;
+  }
+  
+  .product-info p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form input[type="hidden"] {
+    display: none;
+  }
+  
+  button.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  button.btn-success:hover {
+    background-color: #218838;
+  }
+  
