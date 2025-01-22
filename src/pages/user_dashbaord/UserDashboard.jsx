@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { getAllProducts } from "../../apis/Api";
 import "./UserDashboard.css"; 
 import ProductCard from "../../components/ProductCard";
-import UserNavbar from "../../components/user_navbar/UserNavbar";
+import UserNavbar from "../../components/user_navbar/UserNavbar"; // Ensure this is correctly imported
+import banner from "../../assets/banner.jpg";
 
 const UserDashboard = () => {
   const [products, setProducts] = useState([]);
@@ -69,40 +70,17 @@ const UserDashboard = () => {
               aria-current="true"
               aria-label="Slide 1"
             ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
           </div>
           <div className="carousel-inner">
-             <div className="carousel-item active">
-               <img
-                src="https://img.freepik.com/free-vector/horizontal-sale-banner-template_23-2148897328.jpg"
+            <div className="carousel-item active">
+              <img
+                src={banner}
                 className="d-block w-100"
                 alt="Fashion Sale Banner"
               />
               <div className="carousel-caption d-none d-md-block">
                 <h5>Exclusive Collection</h5>
                 <p>Shop the latest trends now!</p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img
-                src="https://marketplace.canva.com/EAFGKRRskMs/1/0/1600w/canva-brown-and-beige-minimalist-fashion-banner-lYcbGpUSVGo.jpg"
-                className="d-block w-100"
-                alt="Seasonal Sale Banner"
-              />
-              <div className="carousel-caption d-none d-md-block">
-                <h5>Seasonal Sale</h5>
-                <p>Get up to 50% off on selected items!</p>
               </div>
             </div>
           </div>
@@ -126,8 +104,7 @@ const UserDashboard = () => {
           </button>
         </div>
       </div>
-        
-    
+
       <div className="container mt-3">
         {loading ? (
           <p>Loading products...</p>
@@ -138,23 +115,34 @@ const UserDashboard = () => {
             ) : (
               <>
                 <div className="row">
-                {
-                        products.map((singleProduct) => (
-                            <div class="col">
-                                <ProductCard productInformation={singleProduct} color={'red' } /> 
-                                {/* // sending product information */}
-                            </div>
-
-                        ))
-                    }
+                  {products.map((singleProduct) => (
+                    <div className="col" key={singleProduct.id}>
+                      <ProductCard
+                        productInformation={singleProduct}
+                        color={"red"}
+                      />
+                    </div>
+                  ))}
                 </div>
                 <nav aria-label="Product navigation">
                   <ul className="pagination justify-content-center mt-4">
-                    <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                      <button className="page-link" onClick={handlePrevPage}>Previous</button>
+                    <li
+                      className={`page-item ${
+                        currentPage === 1 ? "disabled" : ""
+                      }`}
+                    >
+                      <button className="page-link" onClick={handlePrevPage}>
+                        Previous
+                      </button>
                     </li>
-                    <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                      <button className="page-link" onClick={handleNextPage}>Next</button>
+                    <li
+                      className={`page-item ${
+                        currentPage === totalPages ? "disabled" : ""
+                      }`}
+                    >
+                      <button className="page-link" onClick={handleNextPage}>
+                        Next
+                      </button>
                     </li>
                   </ul>
                 </nav>
