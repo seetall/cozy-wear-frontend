@@ -1,0 +1,27 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex !important; /* Ensure flexbox layout is applied */
+  flex-wrap: nowrap; /* Disable wrapping if not needed */
+  justify-content: space-between !important;
+}
+
+.col-md-6 {
+  flex: 1 !important;
+  margin: 10px !important;
+}
+
+.img-fluid {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
