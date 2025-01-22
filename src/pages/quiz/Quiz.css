@@ -1,0 +1,44 @@
+.quiz-container {
+    width: 100%;
+    max-width: 800px; /* Optional: limit the width */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: left; /* Ensure text and elements are aligned to the left */
+  }
+  
+  .quiz-question {
+    margin-bottom: 20px;
+  }
+  
+  .quiz-question label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .quiz-options {
+    margin-left: 20px;
+  }
+  
+  .quiz-options label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
