@@ -1,27 +1,110 @@
-body, html {
-  margin: 0;
-  padding: 0;
+/* Flexbox Layout for Product Detail */
+.product-detail {
+  display: flex;
+  justify-content: space-between; /* Space between image and details */
+  align-items: flex-start;
+  gap: 30px; /* Add space between the image and the details */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.product-image-column {
+  flex: 1;
+  max-width: 45%; /* Limits the width of the image column */
+}
+
+.product-details-column {
+  flex: 2;
+  max-width: 50%;
+}
+
+/* Product Image */
+.product-image {
+  width: 500px !important; /* Ensures the image takes up the full column width */
+  height: 400px !important;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Button Styling for Size Selection */
+.size-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.size-button.selected {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Color Circle Styles */
+.color-selection {
+  display: flex;
+  gap: 10px;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+.color-circle.selected {
+  border-color: #000;
+}
+
+/* Order Button */
+.order-button {
   width: 100%;
-  height: 100%;
+  padding: 15px;
+  background-color: navy;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-div {
-  box-sizing: border-box;
+.order-button:hover {
+  background-color: darkblue;
 }
 
-.row {
-  display: flex !important; /* Ensure flexbox layout is applied */
-  flex-wrap: nowrap; /* Disable wrapping if not needed */
-  justify-content: space-between !important;
+/* Popup Styling */
+.popup {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.col-md-6 {
-  flex: 1 !important;
-  margin: 10px !important;
-}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column;
+    align-items: center; /* Stack the image and details vertically */
+  }
 
-.img-fluid {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block !important;
+  .product-image-column {
+    max-width: 100%;
+    margin-bottom: 20px; /* Add some space between the image and the details */
+  }
+
+  .product-details-column {
+    max-width: 100%;
+  }
+
+  .product-image {
+    height: 300px; /* Reduce image height for small screens */
+  }
 }
